@@ -68,18 +68,22 @@ button:focus-visible {
   }
 }
 #contact-form {
-  display: flex;
-  flex-direction: column;
   max-width: 400px;
   margin: auto;
 }
 
-#contact-form p {
+.form-group {
+  margin-bottom: 15px;
+}
+
+.name-fields {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  align-items: center;
-  margin: 10px 0;
+}
+
+#contact-form label {
+  display: block;
+  margin-bottom: 5px;
 }
 
 #contact-form span {
@@ -90,9 +94,14 @@ button:focus-visible {
 #contact-form textarea {
   width: 100%;
   padding: 8px;
-  margin-top: 4px;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
 }
 
 #contact-form button {
@@ -102,9 +111,11 @@ button:focus-visible {
   cursor: pointer;
   background-color: #007bff;
   color: white;
-  margin-right: 10px;
+  margin-left: 10px;
 }
- #contact-form button[type="submit"] {
+
+#contact-form button[type="submit"] {
   background-color: #28a745;
-} 
+}
+
 
