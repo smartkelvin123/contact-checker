@@ -119,3 +119,37 @@ button:focus-visible {
 }
 
 
+/* .edit-contact-container {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 10px;
+  /* width: 50%; 
+  box-sizing: border-box;
+  float: right;
+}  */
+
+.edit-container {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 10px;
+  /* width: 50%;  */
+  box-sizing: border-box;
+  float: right;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+ .root-container {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 10px;
+  width: 60%; 
+  box-sizing: border-box;
+  float: left;
+} 
+
+

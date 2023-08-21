@@ -1,10 +1,11 @@
-import { Outlet, Link, useLoaderData, Form } from "react-router-dom";
+import { Outlet, Link, useLoaderData, Form, redirect } from "react-router-dom";
+// import "./index.css";
 
 import { getContacts, createContact } from "../Contacts";
 
 export async function action() {
   const contact = await createContact();
-  return { contact };
+  return redirect(`/contacts/${contact.id}/edit`);
 }
 
 export async function loader() {
@@ -16,7 +17,7 @@ export default function Root() {
   const { contacts } = useLoaderData();
   return (
     <>
-      <div id="sidebar">
+      <div id="sidebar" className="root-container">
         <h1>kelvin's Contacts</h1>
         <div>
           <form id="search-form" role="search">
