@@ -1,5 +1,10 @@
-import { Outlet, Link, useLoaderData, Form, redirect } from "react-router-dom";
-// import "./index.css";
+import {
+  Outlet,
+  useLoaderData,
+  Form,
+  redirect,
+  NavLink,
+} from "react-router-dom";
 
 import { getContacts, createContact } from "../Contacts";
 
@@ -40,7 +45,11 @@ export default function Root() {
             <ul>
               {contacts.map((contact) => (
                 <li key={contact.id}>
-                  <Link to={`contacts/${contact.id}`}>
+                  <NavLink to={`contacts/${contact.id}`}>
+                    className=
+                    {({ isActive, isPending }) =>
+                      isActive ? "active" : isPending ? "pending" : ""
+                    }
                     {contact.first || contact.last ? (
                       <>
                         {contact.first} {contact.last}
@@ -49,7 +58,7 @@ export default function Root() {
                       <i>No Name</i>
                     )}{" "}
                     {contact.favorite && <span>★</span>}
-                  </Link>
+                  </NavLink>
                 </li>
               ))}
             </ul>
@@ -60,7 +69,7 @@ export default function Root() {
           )}
         </nav>
 
-        <nav>
+        {/* <nav>
           <ul>
             <li>
               <Link to={`contacts/1`}>Home</Link>
@@ -69,7 +78,7 @@ export default function Root() {
               <Link to={`contacts/2`}>Home</Link>
             </li>
           </ul>
-        </nav>
+        </nav> */}
       </div>
       <div id="detail"></div>
       <Outlet />

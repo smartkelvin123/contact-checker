@@ -61,10 +61,7 @@ export default function EditContact() {
           <textarea name="notes" defaultValue={contact.notes} rows={6} />
         </label>
       </p>
-      <p>
-        {/* <span>Image</span>
-        <img src={imageURL} alt="Contact" /> */}
-      </p>
+
       <p>
         <button type="submit">Save</button>
         <button type="button">Cancel</button>
