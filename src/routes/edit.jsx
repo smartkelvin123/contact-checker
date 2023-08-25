@@ -1,7 +1,7 @@
 import React from "react";
 import { Form, useLoaderData, redirect } from "react-router-dom";
 import { updateContact } from "../Contacts";
-// import "./index.css";
+// import imageURL from "../../public/horse-8193368_1280 (1).jpg";
 
 export async function action({ request, params }) {
   const formData = await request.formData();
@@ -48,7 +48,7 @@ export default function EditContact() {
           <span>Avatar URL</span>
           <input
             placeholder="https://example.com/avatar.jpg"
-            aria-label="../../public/horse-8193368_1280 (1).jpg"
+            aria-label=""
             type="text"
             name="avatar"
             defaultValue={contact.avatar}
@@ -60,6 +60,10 @@ export default function EditContact() {
           <span>Notes</span>
           <textarea name="notes" defaultValue={contact.notes} rows={6} />
         </label>
+      </p>
+      <p>
+        {/* <span>Image</span>
+        <img src={imageURL} alt="Contact" /> */}
       </p>
       <p>
         <button type="submit">Save</button>
