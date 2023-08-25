@@ -48,7 +48,7 @@ export default function EditContact() {
           <span>Avatar URL</span>
           <input
             placeholder="https://example.com/avatar.jpg"
-            aria-label="Avatar URL"
+            aria-label="../../public/horse-8193368_1280 (1).jpg"
             type="text"
             name="avatar"
             defaultValue={contact.avatar}

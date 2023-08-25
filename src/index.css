@@ -151,5 +151,14 @@ button:focus-visible {
   box-sizing: border-box;
   float: left;
 } 
+.edit-button {
+  background-color: blue;
+  color: white;
+}
+
+.delete-button {
+  background-color: red;
+  color: white;
+}
 
 
