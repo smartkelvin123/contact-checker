@@ -4,6 +4,7 @@ import {
   Form,
   redirect,
   NavLink,
+  useNavigation,
 } from "react-router-dom";
 
 import { getContacts, createContact } from "../Contacts";
@@ -19,7 +20,13 @@ export async function loader() {
 }
 
 export default function Root() {
+  const activeStyles = {
+    fontWeight: "bold",
+    textDecoration: "underline",
+    color: "#161616",
+  };
   const { contacts } = useLoaderData();
+  const navigation = useNavigation();
   return (
     <>
       <div id="sidebar" className="root-container">
@@ -45,11 +52,10 @@ export default function Root() {
             <ul>
               {contacts.map((contact) => (
                 <li key={contact.id}>
-                  <NavLink to={`contacts/${contact.id}`}>
-                    className=
-                    {({ isActive, isPending }) =>
-                      isActive ? "active" : isPending ? "pending" : ""
-                    }
+                  <NavLink
+                    to={`contacts/${contact.id}`}
+                    style={({ isActive }) => (isActive ? activeStyles : null)}
+                  >
                     {contact.first || contact.last ? (
                       <>
                         {contact.first} {contact.last}
@@ -80,7 +86,10 @@ export default function Root() {
           </ul>
         </nav> */}
       </div>
-      <div id="detail"></div>
+      <div
+        id="detail"
+        className={navigation.state === "loading" ? "loading" : ""}
+      ></div>
       <Outlet />
     </>
   );

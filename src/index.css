@@ -160,5 +160,9 @@ button:focus-visible {
   background-color: red;
   color: white;
 }
+.button-container {
+  display: flex;
+  gap: 20px;
+}
 
 

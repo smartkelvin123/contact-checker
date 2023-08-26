@@ -41,7 +41,7 @@ export default function Contact() {
 
         {contact.notes && <p>{contact.notes}</p>}
 
-        <div>
+        <div className="button-container">
           <Form action="edit">
             <button type="submit" className="edit-button">
               Edit
@@ -67,20 +67,5 @@ export default function Contact() {
         </div>
       </div>
     </div>
-  );
-}
-function Favorite({ contact }) {
-  // yes, this is a `let` for later
-  let favorite = contact.favorite;
-  return (
-    <Form method="post">
-      <button
-        name="favorite"
-        value={favorite ? "false" : "true"}
-        aria-label={favorite ? "Remove from favorites" : "Add to favorites"}
-      >
-        {favorite ? "★" : "☆"}
-      </button>
-    </Form>
   );
 }
